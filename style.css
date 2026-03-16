@@ -1,0 +1,154 @@
+/* Reset & basics */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Segoe UI', sans-serif; background:#30364F; color:#9CD5FF; display:flex; flex-direction:column; align-items:center; min-height:100vh; }
+
+header { text-align:center; margin:20px; }
+header h1 { font-size:2.5rem; color:#F7F8F0; }
+header p { font-size:1rem; color:#9CD5FF; }
+
+.gallery { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:25px; width:95%; margin:20px auto; }
+.art-piece { background:#355872; padding:20px; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1); text-align:center; transition: transform 0.3s, box-shadow 0.3s; }
+.art-piece:hover { transform:translateY(-10px); box-shadow:0 10px 20px rgba(0,0,0,0.2); }
+.caption { margin-top:10px; font-weight:bold; color:#F7F8F0; }
+
+/* ---------- Pikachu ---------- */
+.pikachu { position:relative; width:120px; height:120px; margin:0 auto; background:#FFD700; border-radius:50%; animation: bounce 2s infinite; }
+@keyframes bounce { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
+.ear { width:25px; height:60px; background:#FFD700; position:absolute; top:-50px; border-radius:50%; }
+.ear.left { left:15px; transform:rotate(-20deg); }
+.ear.right { right:15px; transform:rotate(20deg); }
+.face { position:relative; width:100%; height:100%; }
+.eye { width:15px; height:15px; background:#000; border-radius:50%; position:absolute; top:40px; }
+.eye.left { left:30px; }
+.eye.right { right:30px; }
+.cheek { width:20px; height:20px; background:#FF4C4C; border-radius:50%; position:absolute; top:70px; }
+.cheek.left { left:15px; }
+.cheek.right { right:15px; }
+.mouth { width:30px; height:5px; background:#000; border-radius:5px; position:absolute; bottom:25px; left:50%; transform:translateX(-50%); }
+
+/* ---------- Smiling Face ---------- */
+.smile-face { position:relative; width:100px; height:100px; background:#FFD966; border-radius:50%; margin:0 auto; animation: spin 4s linear infinite; }
+@keyframes spin { 0%{transform:rotate(0deg);} 100%{transform:rotate(360deg);} }
+.smile-face .eye { width:10px; height:10px; background:#000; border-radius:50%; position:absolute; top:30px; }
+.smile-face .eye.left { left:25px; }
+.smile-face .eye.right { right:25px; }
+.smile-face .mouth { width:50px; height:20px; border-bottom:5px solid #000; border-radius:0 0 50px 50px; position:absolute; bottom:20px; left:50%; transform:translateX(-50%); }
+
+/* ---------- Abstract Shapes ---------- */
+.abstract { position:relative; width:120px; height:120px; margin:0 auto; }
+.circle { width:40px; height:40px; background:#6A5ACD; border-radius:50%; position:absolute; top:10px; left:10px; animation: float 3s infinite alternate; }
+.triangle { width:0; height:0; border-left:25px solid transparent; border-right:25px solid transparent; border-bottom:50px solid #FF6347; position:absolute; bottom:10px; right:10px; animation: float 2.5s infinite alternate-reverse; }
+.square { width:30px; height:30px; background:#3CB371; position:absolute; top:50px; right:30px; animation: float 2s infinite alternate; }
+@keyframes float { 0%{transform:translateY(0);} 100%{transform:translateY(-10px);} }
+
+/* ---------- Mini Castle ---------- */
+.castle { position:relative; width:100px; height:80px; margin:0 auto; background:#B0C4DE; border-radius:5px; animation: shake 2s infinite; }
+@keyframes shake { 0%,100%{transform:translateX(0);} 50%{transform:translateX(-5px);} }
+.castle .tower { width:20px; height:50px; background:#778899; position:absolute; top:-50px; }
+.castle .tower.left { left:-10px; }
+.castle .tower.right { right:-10px; }
+.castle .wall { width:100%; height:20px; background:#A9A9A9; position:absolute; bottom:0; }
+
+/* ---------- Robot ---------- */
+.robot { position:relative; width:80px; height:100px; margin:0 auto; background:#C0C0C0; border-radius:10px; animation: robot-float 3s infinite alternate; }
+@keyframes robot-float { 0%{transform:translateY(0);} 100%{transform:translateY(-10px);} }
+.robot .head { width:80px; height:40px; background:#A9A9A9; border-radius:5px; position:absolute; top:0; }
+.robot .body { width:60px; height:60px; background:#C0C0C0; position:absolute; top:40px; left:10px; border-radius:5px; }
+.robot .eye { width:10px; height:10px; background:#000; border-radius:50%; position:absolute; top:10px; }
+.robot .eye.left { left:20px; }
+.robot .eye.right { right:20px; }
+
+/* ---------- Sun & Cloud ---------- */
+.sun-cloud { position:relative; width:120px; height:80px; margin:0 auto; }
+.sun { width:40px; height:40px; background:#FFD700; border-radius:50%; position:absolute; top:10px; left:10px; animation: rotate-sun 5s linear infinite; }
+.cloud { width:60px; height:30px; background:#fff; border-radius:50%; position:absolute; top:30px; left:50px; animation: float 4s infinite alternate; }
+@keyframes rotate-sun { 0%{transform:rotate(0deg);} 100%{transform:rotate(360deg);} }
+
+/* ---------- Tree ---------- */
+.tree { position:relative; width:60px; height:100px; margin:0 auto; }
+.trunk { width:20px; height:60px; background:#8B4513; position:absolute; bottom:0; left:20px; border-radius:5px; }
+.leaves { width:60px; height:40px; background:#228B22; position:absolute; top:0; border-radius:50%; animation: sway 2s infinite alternate; }
+@keyframes sway { 0%{transform:rotate(-5deg);} 100%{transform:rotate(5deg);} }
+
+/* ---------- Heart ---------- */
+.heart { width:50px; height:50px; background:red; position:relative; transform:rotate(-45deg); margin:0 auto; animation: heartbeat 1s infinite; }
+.heart::before, .heart::after { content:""; width:50px; height:50px; background:red; border-radius:50%; position:absolute; }
+.heart::before { top:-25px; left:0; }
+.heart::after { left:25px; top:0; }
+@keyframes heartbeat { 0%,100%{transform:scale(1) rotate(-45deg);} 50%{transform:scale(1.2) rotate(-45deg);} }
+
+/* ---------- Star ---------- */
+.star { width:0; height:0; margin:0 auto; border-left:25px solid transparent; border-right:25px solid transparent; border-bottom:50px solid #FFD700; position:relative; animation: twinkle 1.5s infinite alternate; }
+.star::after { content:""; width:0; height:0; position:absolute; top:15px; left:-25px; border-left:25px solid transparent; border-right:25px solid transparent; border-top:50px solid #FFD700; }
+@keyframes twinkle { 0%{opacity:0.5;} 100%{opacity:1;} }
+
+/* ---------- Balloon ---------- */
+.balloon { width:40px; height:60px; background:#FF69B4; border-radius:50% 50% 50% 50%; margin:0 auto; position:relative; animation: float-up 3s infinite alternate; }
+.balloon .string { width:2px; height:30px; background:#000; position:absolute; bottom:-30px; left:50%; transform:translateX(-50%); }
+@keyframes float-up { 0%{transform:translateY(0);} 100%{transform:translateY(-15px);} }
+
+/* ---------- Ghost ---------- */
+.ghost { width:60px; height:60px; background:#fff; border-radius:50% 50% 0 0; margin:0 auto; position:relative; animation: ghost-float 2s infinite alternate; }
+.ghost .eye { width:10px; height:10px; background:#000; border-radius:50%; position:absolute; top:20px; }
+.ghost .eye.left { left:10px; }
+.ghost .eye.right { right:10px; }
+.ghost .mouth { width:20px; height:5px; background:#000; position:absolute; bottom:10px; left:50%; transform:translateX(-50%); }
+@keyframes ghost-float { 0%{transform:translateY(0);} 100%{transform:translateY(-10px);} }
+
+/* ---------- Rocket ---------- */
+.rocket { width:40px; height:80px; background:#C0C0C0; margin:0 auto; border-radius:5px; position:relative; animation: rocket-launch 2s infinite alternate; }
+.rocket .window { width:15px; height:15px; background:#87CEEB; border-radius:50%; position:absolute; top:15px; left:50%; transform:translateX(-50%); }
+.rocket .flame { width:10px; height:20px; background:orange; position:absolute; bottom:-20px; left:50%; transform:translateX(-50%); border-radius:50%; animation: flame-flicker 0.3s infinite alternate; }
+@keyframes rocket-launch { 0%{transform:translateY(0);} 100%{transform:translateY(-20px);} }
+@keyframes flame-flicker { 0%{height:15px;} 100%{height:25px;} }
+
+/* ---------- Flower ---------- */
+.flower { position:relative; width:60px; height:60px; margin:0 auto; }
+.flower .petal { width:30px; height:30px; background:pink; border-radius:50%; position:absolute; top:15px; animation: petal-sway 2s infinite alternate; }
+.flower .petal.left { left:-10px; }
+.flower .petal.right { right:-10px; }
+.flower .center { width:20px; height:20px; background:yellow; border-radius:50%; position:absolute; top:20px; left:50%; transform:translateX(-50%); }
+@keyframes petal-sway { 0%{transform:rotate(-10deg);} 100%{transform:rotate(10deg);} }
+
+/* ---------- Moon ---------- */
+.moon { width:50px; height:50px; background:#F0E68C; border-radius:50%; margin:0 auto; animation: moon-glow 3s infinite alternate; }
+@keyframes moon-glow { 0%{box-shadow:0 0 5px #F0E68C;} 100%{box-shadow:0 0 15px #F0E68C;} }
+
+/* ---------- Candy ---------- */
+.candy { width:40px; height:20px; background:#FF69B4; border-radius:10px; margin:0 auto; position:relative; animation: candy-rotate 2s infinite linear; }
+.candy::before, .candy::after { content:""; width:10px; height:10px; background:#FF69B4; border-radius:50%; position:absolute; top:5px; }
+.candy::before { left:-10px; }
+.candy::after { right:-10px; }
+@keyframes candy-rotate { 0%{transform:rotate(0deg);} 100%{transform:rotate(360deg);} }
+
+/* ---------- Music Note ---------- */
+.music-note { width:5px; height:40px; background:#000; margin:0 auto; position:relative; animation: note-bounce 1s infinite alternate; }
+.music-note::before { content:""; width:15px; height:15px; border-radius:50%; background:#000; position:absolute; top:-15px; left:-5px; }
+@keyframes note-bounce { 0%{transform:translateY(0);} 100%{transform:translateY(-10px);} }
+
+/* ---------- Mountain ---------- */
+.mountain { width:0; height:0; border-left:30px solid transparent; border-right:30px solid transparent; border-bottom:50px solid #556B2F; margin:0 auto; animation: mountain-sway 2s infinite alternate; }
+@keyframes mountain-sway { 0%{transform:rotate(-2deg);} 100%{transform:rotate(2deg);} }
+
+/* ---------- Fish ---------- */
+.fish { width:40px; height:20px; background:#1E90FF; border-radius:50% 50% 50% 50%; margin:0 auto; position:relative; animation: fish-swim 3s infinite alternate; }
+.fish::after { content:""; width:10px; height:10px; background:#1E90FF; position:absolute; top:5px; right:-10px; border-radius:50%; }
+@keyframes fish-swim { 0%{transform:translateX(0);} 100%{transform:translateX(20px);} }
+
+/* ---------- Coffee Cup ---------- */
+.coffee-cup { width:40px; height:30px; background:#8B4513; border-radius:0 0 5px 5px; margin:0 auto; position:relative; }
+.coffee-cup::before { content:""; width:30px; height:10px; background:#D2B48C; border-radius:5px; position:absolute; top:-10px; left:50%; transform:translateX(-50%); }
+.coffee-cup::after { content:""; width:10px; height:15px; border:3px solid #8B4513; border-top:none; border-radius:0 0 10px 10px; position:absolute; right:-15px; top:5px; }
+
+/* Optional steam animation */
+.coffee-cup::after { animation: steam 2s infinite alternate; }
+@keyframes steam { 0%{transform:translateY(0);} 100%{transform:translateY(-10px);} }
+
+/* ---------- Balloon Animal ---------- */
+.balloon-animal { width:60px; height:20px; background:#FF4500; border-radius:10px; margin:0 auto; position:relative; animation: bounce 2s infinite alternate; }
+.balloon-animal::before, .balloon-animal::after { content:""; width:20px; height:20px; background:#FF4500; border-radius:50%; position:absolute; top:-10px; }
+.balloon-animal::before { left:-10px; }
+.balloon-animal::after { right:-10px; }
+
+/* Footer */
+footer { margin:20px; text-align:center; color:#F7F8F0; font-size:0.9rem; }
