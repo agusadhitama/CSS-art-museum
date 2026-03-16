@@ -59,15 +59,6 @@ open index.html
 
 ---
 
-## 💡 Customization
-Add your own art by creating a <div> inside .gallery and styling it in style.css
-
-Change colors, animations, or grid layout as desired
-
-Credit remains : Agus Satria Adhitama
-
----
-
 ## 📜 License
 
 This project is open-source and free to use for personal or educational purposes.
