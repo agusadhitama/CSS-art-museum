@@ -2,7 +2,12 @@
 
 ✨ **Interactive CSS Art Gallery by Agus Satria Adhitama** ✨
 
-Welcome to **Pixel & Pulse**, a collection of **20+ unique and animated CSS artworks**, created purely with HTML and CSS. This gallery showcases fun, creativity, and interactive mini-animations - from Pikachu to Rockets, Music Notes, Flowers, and more! 
+Welcome to **Pixel & Pulse**, a collection of **20+ unique and animated CSS artworks**, created purely with HTML and CSS. This gallery showcases fun, creativity, and interactive mini-animations - from Pikachu to Rockets, Music Notes, Flowers, and more ! 
+
+---
+
+## ⚡ Live Demo
+https://agusadhitama.github.io/CSS-art-museum/
 
 ---
 
